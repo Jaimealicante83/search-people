@@ -8,11 +8,18 @@ function App() {
 
   const [savedCharacter, setSavedCharacter] = useState('');
   const [characterList, setCharacterList] = useState([])
+  const [selectedCharacter, setSelectedCharacter] = useState('')
+  const [informationCharacter, setInformationCharacter] = useState('')
+
 
   useEffect(() => {
     setCharacterList([...characterList, savedCharacter])
-
   }, [savedCharacter]);
+
+  const selectCharacter = (el) => {
+    console.log('se ejecuta y traemos ' + el.name)
+    setInformationCharacter(el)
+  }
 
   return (
     <div className="App">
@@ -27,14 +34,14 @@ function App() {
           </div>
           <div className="container-saved-people">
               <h2>Saved people</h2>
-              <SavedPeople characterList={characterList}/>
+              <SavedPeople characterList={characterList} selectCharacter={selectCharacter}/>
           </div>
         </div>
 
         <div className="container2">
           <div className="container-information">
               <h2>Information about...</h2>
-              <Information />
+              <Information informationCharacter={informationCharacter}/>
           </div>
         </div>
       </section>
