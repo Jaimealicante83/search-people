@@ -1,7 +1,7 @@
 import React from "react";
 import TableRow from "./TableRow";
 
-const Table = ({ data, setSavedCharacter }) => {
+const Table = ({ datos, setSavedCharacter, selectCharacter, deleteCharacterFromSearch }) => {
   return (
     <>
       <table>
@@ -17,13 +17,17 @@ const Table = ({ data, setSavedCharacter }) => {
         </thead>
         <tbody>
        
-          {data.length === 0 ? (
+          {datos.length === 0 ? (
             <tr>
               <td>There is no data</td>
             </tr>
-          ) : (
-            data.map((el) => <TableRow key={el} el={el} setSavedCharacter={setSavedCharacter}/> )
-          )}   
+            ) : (
+              datos.map((el) => <TableRow key={el.name} el={el} 
+              setSavedCharacter={setSavedCharacter} 
+              selectCharacter={selectCharacter}
+              deleteCharacterFromSearch={deleteCharacterFromSearch}
+              /> )
+            )}   
         </tbody>
       </table>
     </>

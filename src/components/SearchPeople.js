@@ -2,16 +2,19 @@ import React, { useState, useEffect } from "react";
 import Table from "./Table";
 import Form from "./Form";
 import axios from "axios";
+import './SearchPeople.css';
 
-const SearchPeople = ({setSavedCharacter}) => {
+
+const SearchPeople = ({setSavedCharacter, selectCharacter, datos, setDatos}) => {
   /* Aqui deberíamos tener los hooks del state y también conectarnos a la API y pasar sus datos al componente hijo (tableRow) a modo de props */
-  const [datos, setDatos] = useState([]);
+
   const [characterName, setCharacterName] = useState(null)
 
   //Api datos 
   const apiDatos = `https://swapi.dev/api/people/?search=${characterName}`;
 
-  //This will import the API data when the component mounts
+
+  //AQUI DEBERIAMOS USAR UNA FUNCION QUE SE EJECUTA AL PULSAR SUBMIT EN VEZ DE SET EFFECT 
   useEffect(() => {
     axios.get(apiDatos).then((res) => {
       let results = res.data;
@@ -20,15 +23,26 @@ const SearchPeople = ({setSavedCharacter}) => {
     });
   }, [characterName]);
 
+  const deleteCharacterFromSearch = (id) => {
+    console.log('el id es ' + id)
+    const filterCharacterFromSearch = datos.filter(item => item.name !== id)
+    setDatos(filterCharacterFromSearch);
+  }
+
 
   //Crear una función que se pase a form como props y que recoja el nombre introducido por el usuario
   // en el formulario y se use en la api https://swapi.dev/api/people/?search=${NOMBRE}
 
 
   return (
-    <div>
+    <div className="search_people_container">
+    <h2>Search people</h2>
       <Form setCharacterName={setCharacterName}/>
-      <Table data={datos} setSavedCharacter={setSavedCharacter}/>
+      <Table 
+      datos={datos} 
+      setSavedCharacter={setSavedCharacter} 
+      selectCharacter={selectCharacter}  
+      deleteCharacterFromSearch={deleteCharacterFromSearch}/>
     </div>
   );
 };

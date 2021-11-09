@@ -1,0 +1,11 @@
+.search_people_container{
+    border: 3px solid black;
+    background-color: rgb(166, 220, 255);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3% 3rem;
+}
+
+th{
+   text-align: left;
+}

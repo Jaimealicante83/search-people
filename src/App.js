@@ -8,8 +8,8 @@ function App() {
 
   const [savedCharacter, setSavedCharacter] = useState('');
   const [characterList, setCharacterList] = useState([])
-  const [selectedCharacter, setSelectedCharacter] = useState('')
   const [informationCharacter, setInformationCharacter] = useState('')
+  const [datos, setDatos] = useState([]);
 
 
   useEffect(() => {
@@ -21,6 +21,14 @@ function App() {
     setInformationCharacter(el)
   }
 
+  const deleteCharacter = (id) => {
+    console.log('el id es ' + id)
+    const devolvereste = characterList.filter(item => item.name === id)
+    const filterCharacter = characterList.filter(item => item.name !== id)
+    const returnedCharacter = setDatos([...datos, devolvereste[0]])
+    setCharacterList(filterCharacter);
+  }
+
   return (
     <div className="App">
       <h1>Web test</h1>
@@ -29,18 +37,25 @@ function App() {
       <section className="section-container">
         <div className="container1">
           <div className="container-search-people">
-              <h2>Search people</h2>
-              <SearchPeople setSavedCharacter={setSavedCharacter}/>
+              <SearchPeople 
+              setSavedCharacter={setSavedCharacter} 
+              selectCharacter={selectCharacter}
+              datos={datos}
+              setDatos={setDatos}
+              />
           </div>
           <div className="container-saved-people">
-              <h2>Saved people</h2>
-              <SavedPeople characterList={characterList} selectCharacter={selectCharacter}/>
+              <SavedPeople 
+              characterList={characterList}
+              selectCharacter={selectCharacter}
+              deleteCharacter={deleteCharacter} 
+              savedCharacter={savedCharacter}
+              />
           </div>
         </div>
 
         <div className="container2">
           <div className="container-information">
-              <h2>Information about...</h2>
               <Information informationCharacter={informationCharacter}/>
           </div>
         </div>

@@ -1,0 +1,73 @@
+.container_saved_people{
+        border: 3px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+.container_cards{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 2rem 3%;
+}
+
+.container_card{
+    width: calc(26% - 10px);
+    border: 1px solid rgb(208, 208, 208);
+    justify-self: start;
+    padding-bottom: 2rem;
+}
+
+.container_card p {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+    font-weight: 600;
+}
+
+.saved_people_title {
+    color: #000;
+    margin-left: 3%;
+}
+
+.buttons_container{
+    margin-left: 3%;
+}
+
+.buttons_container button{
+    font-size: .8rem;
+    height: 2rem;
+    border: none;
+    background-color: rgb(49, 97, 218);
+    color: #fff;
+}
+
+.buttons_container button:first-of-type{
+    border-radius: 15% 0 0 15%;
+}
+
+.buttons_container button:last-of-type{
+    border-radius:  0 15% 15% 0;
+}
+
+.container_card button:first-of-type {
+    margin-left: 1rem;
+}
+
+.no_display{
+    display: none;
+}
+
+img{
+    height: auto;
+    width: 100%
+}
+
+.saved_character_button{
+    font-size: .8rem;
+    height: 2rem;
+    border: none;
+    background-color: rgb(49, 97, 218);
+    color: #fff;
+    border-radius: 3px;
+}
