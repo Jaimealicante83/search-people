@@ -13,16 +13,17 @@ const SavedPeople = ({ characterList, selectCharacter, deleteCharacter, savedCha
                 <button>female</button>
             </div>
                 <div className="container_cards">
-                {savedCharacter.length === 0 ? ('') : 
+                {savedCharacter.length === 0 ? ("You didn't save anyone yet!") : 
                   (
                     characterList.map((el) => 
                     <>
-                    { el.name ? (<>    <div className="container_card">
+                    { el.name ? (<>   
+                     <div className="container_card">
                         <img src={`../img/${el.name}.jpg`} alt={el.name}/>
                         <p>{el.name}</p>
-  
-                    <button onClick={() => selectCharacter(el)} className="saved_character_button">Show Details</button>
-                    <button onClick={() => deleteCharacter(el.name)} className="saved_character_button">Remove</button></div> </>
+                        <button onClick={() => selectCharacter(el)} className="saved_character_button">Show Details</button>
+                        <button onClick={() => deleteCharacter(el.name)} className="saved_character_button">Remove</button>
+                    </div> </>
                          ) : (<div className="no_display"></div>) }
                     
                     </>

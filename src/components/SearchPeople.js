@@ -5,10 +5,10 @@ import axios from "axios";
 import './SearchPeople.css';
 
 
-const SearchPeople = ({setSavedCharacter, selectCharacter, datos, setDatos}) => {
+const SearchPeople = ({setSavedCharacter, selectCharacter, datos, setDatos, characterName, setCharacterName}) => {
   /* Aqui deberíamos tener los hooks del state y también conectarnos a la API y pasar sus datos al componente hijo (tableRow) a modo de props */
 
-  const [characterName, setCharacterName] = useState(null)
+  //const [characterName, setCharacterName] = useState(null)
 
   //Api datos 
   const apiDatos = `https://swapi.dev/api/people/?search=${characterName}`;

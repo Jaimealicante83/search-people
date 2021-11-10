@@ -1,4 +1,5 @@
 import React from "react";
+import './TableRow.css';
 
 const TableRow = ({ el, setSavedCharacter, selectCharacter, deleteCharacterFromSearch}) => {
 
