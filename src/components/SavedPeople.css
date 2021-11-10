@@ -20,6 +20,11 @@
     padding-bottom: 2rem;
 }
 
+.hide{
+    background-color: gray;
+    display: none;
+}
+
 .container_card p {
     font-size: 1.1rem;
     padding-left: 1rem;
@@ -39,7 +44,6 @@
     font-size: .8rem;
     height: 2rem;
     border: none;
-    background-color: rgb(49, 97, 218);
     color: #fff;
 }
 
@@ -73,7 +77,6 @@ img{
     font-size: .8rem;
     height: 2rem;
     border: none;
-    background-color: rgb(49, 97, 218);
     color: #fff;
     border-radius: 3px;
 }
@@ -121,7 +124,6 @@ img{
         font-size: .8rem;
         height: 2rem;
         border: none;
-        background-color: rgb(49, 97, 218);
         color: #fff;
     }
 
@@ -154,7 +156,6 @@ img{
         font-size: .8rem;
         height: 2rem;
         border: none;
-        background-color: rgb(49, 97, 218);
         color: #fff;
         border-radius: 3px;
     }

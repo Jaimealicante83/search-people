@@ -1,5 +1,6 @@
 import React from "react";
 import TableRow from "./TableRow";
+import './Table.css';
 
 const Table = ({ datos, setSavedCharacter, selectCharacter, deleteCharacterFromSearch }) => {
   return (

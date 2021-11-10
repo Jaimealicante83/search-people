@@ -25,7 +25,6 @@ const Form = ({ setCharacterName }) => {
       setCharacterName(form.name)
     }
   };
-  const handleReset = (e) => {};
 
   return (
     <>

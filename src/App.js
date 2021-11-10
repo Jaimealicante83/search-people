@@ -18,22 +18,21 @@ function App() {
   }, [savedCharacter]);
 
   const selectCharacter = (el) => {
-    console.log('se ejecuta y traemos ' + el.name)
+    console.log('We bring the following character ' + el.name)
     setInformationCharacter(el)
   }
 
   const deleteCharacter = (id) => {
-    console.log('el id es ' + id)
+    console.log('The selected id is: ' + id)
     const returnCharacter = characterList.filter(item => item.name === id)
     const filterCharacter = characterList.filter(item => item.name !== id)
     if (id === characterName) {
-       console.log('el nombre es igual al input');
+       console.log('The name is equal to the input value');
        setDatos([...datos, returnCharacter[0]])
-    }  else { console.log('no se pudo devolver') }  
+    }  else { console.log('it could not be returned') }  
     const returnedCharacter = setSavedCharacter([...characterList, returnCharacter[0]])
     setCharacterList(filterCharacter);
   }
-
 
   //Usar setCharacterList para filtrar male female y all
 
