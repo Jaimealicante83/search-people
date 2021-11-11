@@ -27,6 +27,7 @@ input[type='submit']{
     border: none;
     padding: .55rem 1rem;
     color: #fff;
+    cursor: pointer;
 }
 
 tbody tr:nth-child(odd){

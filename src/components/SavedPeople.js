@@ -56,7 +56,7 @@ const SavedPeople = ({ characterList, selectCharacter, deleteCharacter, savedCha
                     characterList.map((el) => 
                     <>
                     { el.name ? (<>
-                        <div className={`container_card ${el.gender}`}>
+                        <div className={`container_card ${el.gender}`} key={el.name}>
                         <img src={`../img/${el.name}.jpg`} alt={el.name}/>
                         <p>{el.name}</p>
   
