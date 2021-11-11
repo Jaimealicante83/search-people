@@ -5,14 +5,6 @@ const TableRow = ({ el, setSavedCharacter, selectCharacter, deleteCharacterFromS
 
   const savingCharacter = (e) => {
     e.preventDefault()
-    if (el.gender === 'male'){
-      console.log("El genero es + " + el.genre)
-      console.log('es masculino')
-    }
-    else if (el.gender === 'female') {
-      console.log("El genero es + " + el.genre)
-      console.log('es femenino')
-    }
     setSavedCharacter(el);
     deleteCharacterFromSearch(el.name)
     console.log('saving this character named: ' + el.name)
