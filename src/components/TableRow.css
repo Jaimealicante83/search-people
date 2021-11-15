@@ -13,9 +13,10 @@ th, td {
 }
 
 table td button{
-padding: .8rem .6rem;
-border-radius: 3px;
-width: 100%;
+    font-size: .4rem;
+    padding: .8rem .6rem;
+    border-radius: 3px;
+    width: 100%;
 }
 
 input[type='text']{
@@ -70,17 +71,18 @@ tbody tr:nth-child(odd){
 }
 
 @media only screen and (min-width: 1200px) {
+
     table button:first-of-type{
-        font-size: 1rem;
-        padding: .5rem 0rem;
+        font-size: .8rem;
+        padding: .2rem 0rem;
         border-radius: 3px;
         width: 55%;
     }
     table button:last-of-type{
-        font-size: 1rem;
-        padding: .5rem 0rem;
+        font-size: .8rem;
+        padding: .2rem 0rem;
         border-radius: 3px;
-        width: 35%;
+        width: 45%;
     }
 }
 

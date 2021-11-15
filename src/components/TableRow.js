@@ -7,7 +7,6 @@ const TableRow = ({ el, setSavedCharacter, selectCharacter, deleteCharacterFromS
     e.preventDefault()
     setSavedCharacter(el);
     deleteCharacterFromSearch(el.name)
-    console.log('saving this character named: ' + el.name)
   }
   return (
     <>

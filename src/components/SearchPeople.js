@@ -13,12 +13,10 @@ const SearchPeople = ({setSavedCharacter, selectCharacter, datos, setDatos, char
     axios.get(apiDatos).then((res) => {
       let results = res.data;
       setDatos(results.results);
-      console.log("The StarWars object is: " + results.results);
     });
   }, [characterName]);
 
   const deleteCharacterFromSearch = (id) => {
-    console.log('The id is: ' + id)
     const filterCharacterFromSearch = datos.filter(item => item.name !== id)
     setDatos(filterCharacterFromSearch);
   }

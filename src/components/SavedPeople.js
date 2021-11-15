@@ -4,40 +4,27 @@ import './SavedPeople.css';
 
 const SavedPeople = ({ characterList, selectCharacter, deleteCharacter, savedCharacter}) => {
 
-    //These functions filter the characters by genre:
     function hideAll(){
-        console.log('Hiding all genres')
         let allCards = document.querySelectorAll('.container_card'), i;
         for (i = 0; i < allCards.length; i++) {
-            console.log(allCards[i])
             allCards[i].classList.toggle('hide')
           }
         }
 
     function hideMales(){
-        console.log('hiding male characters')
         let maleCards = document.querySelectorAll('.male'), i;
         for (i = 0; i < maleCards.length; i++) {
-            console.log(maleCards[i])
             if (maleCards[i].classList.contains('male')){
                 maleCards[i].classList.toggle('hide')
-            }
-            else{
-                console.log('there are no male characters')
             }
           }
         }
 
     function hideFemales(){
-        console.log('hiding female characters')
         var femaleCards = document.querySelectorAll('.female'), i;
         for (i = 0; i < femaleCards.length; ++i) {
-            console.log(femaleCards[i])
             if (femaleCards[i].classList.contains('female')){
                 femaleCards[i].classList.toggle('hide')
-            }
-            else{
-                console.log('there are no female characters')
             }
           }
         }
